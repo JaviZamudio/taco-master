@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bli7s81i8rji6"]
+
+[ext_resource type="Script" uid="uid://jwd0niu5fgbd" path="res://scenes/drop_zone.gd" id="1_dlln2"]
+
+[node name="DropZone" type="Area2D" unique_id=878221727 groups=["dropzones"]]
+script = ExtResource("1_dlln2")

@@ -1,11 +1,14 @@
 extends Area2D
 
+@export var ingredient: Ingredient
+
 var was_dropped: bool = false
 var possible_dropzones: Array[Area2D] = []
+var original_position: Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	$Sprite2D.texture = ingredient.texture
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,8 +27,6 @@ func _on_area_exited(area: Area2D) -> void:
 
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	print("input event on draggable ingredient: ", event)
-
 	if not (event is InputEventMouseButton):
 		return
 
@@ -47,5 +48,5 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 			else:
 				was_dropped = true
 				var go_back_tween = create_tween()
-				go_back_tween.tween_property(self, "global_position", get_parent().global_position, 0.05)
+				go_back_tween.tween_property(self, "global_position", original_position, 0.05)
 				go_back_tween.finished.connect(queue_free)

@@ -1,29 +1,21 @@
 [gd_scene format=3 uid="uid://baltimoxlb2ix"]
 
 [ext_resource type="Script" uid="uid://bj88pvfweldbv" path="res://scenes/draggable_ingredient.gd" id="1_ss4f0"]
+[ext_resource type="Texture2D" uid="uid://df5c7n3iek4kq" path="res://assets/graphics/ingredients/tortilla.png" id="2_483vi"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sugp2"]
-size = Vector2(64, 64)
-
-[sub_resource type="Gradient" id="Gradient_o5qli"]
-interpolation_mode = 1
-colors = PackedColorArray(0.72, 0.63264, 0.3168, 1, 0.72, 0.62796, 0.29520002, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_0wfyh"]
-gradient = SubResource("Gradient_o5qli")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.5, 0)
-metadata/_snap_enabled = true
+[sub_resource type="CircleShape2D" id="CircleShape2D_483vi"]
+radius = 31.13241
 
 [node name="DraggableIngredient" type="Area2D" unique_id=1107651793]
 script = ExtResource("1_ss4f0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1267867297]
-shape = SubResource("RectangleShape2D_sugp2")
-
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=300588625]
-texture = SubResource("GradientTexture2D_0wfyh")
+scale = Vector2(0.24692228, 0.24692228)
+texture = ExtResource("2_483vi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1267867297]
+scale = Vector2(1.6634765, 1.6634765)
+shape = SubResource("CircleShape2D_483vi")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

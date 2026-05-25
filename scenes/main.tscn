@@ -1,104 +1,160 @@
 [gd_scene format=3 uid="uid://bfo7sasxo8dxe"]
 
-[ext_resource type="Script" uid="uid://co7kiaa66f5kp" path="res://scenes/ingredient_generator.gd" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://cmvt1lvu2rrr0" path="res://assets/graphics/taco_stand-grill.png" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://ceyif5gvdax6k" path="res://scenes/ingredient_generator.tscn" id="2_tefeu"]
+[ext_resource type="PackedScene" uid="uid://bli7s81i8rji6" path="res://scenes/drop_zone.tscn" id="3_jyhfs"]
+[ext_resource type="Resource" uid="uid://dbdjulyq02jmk" path="res://resources/ingredients/onion_cilantro.tres" id="3_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://e7lgkth3olnj" path="res://assets/graphics/ingredients/red_sauce.png" id="3_sugp2"]
+[ext_resource type="Resource" uid="uid://bjtja056pqcyo" path="res://resources/ingredients/bistec.tres" id="4_tefeu"]
+[ext_resource type="Resource" uid="uid://cs5jj5cepjtcm" path="res://resources/ingredients/green_sauce.tres" id="4_tipki"]
+[ext_resource type="Resource" uid="uid://dwj40ljf6r3l" path="res://resources/ingredients/cacahuates.tres" id="5_eb6dy"]
+[ext_resource type="Resource" uid="uid://dcslc50t6wck6" path="res://resources/ingredients/red_sauce.tres" id="5_tipki"]
+[ext_resource type="Resource" uid="uid://b8ah37qboahmt" path="res://resources/ingredients/chorizo.tres" id="8_trceg"]
+[ext_resource type="Resource" uid="uid://cnr6plmnof0vn" path="res://resources/ingredients/arrachera.tres" id="9_a8y0u"]
+[ext_resource type="Resource" uid="uid://cd21dw1yaqnem" path="res://resources/ingredients/pastor.tres" id="10_jkv2x"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
-size = Vector2(160, 144)
+[sub_resource type="CircleShape2D" id="CircleShape2D_tefeu"]
+radius = 74.54529
 
-[sub_resource type="Gradient" id="Gradient_tbgi4"]
-offsets = PackedFloat32Array(0.16368599)
-colors = PackedColorArray(0.72, 0.67476004, 0.5112001, 1)
+[sub_resource type="CircleShape2D" id="CircleShape2D_tbgi4"]
+radius = 61.073727
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_tefeu"]
-gradient = SubResource("Gradient_tbgi4")
+[sub_resource type="CircleShape2D" id="CircleShape2D_o6xl0"]
+radius = 61.073727
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfyh"]
-size = Vector2(160, 144)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sugp2"]
+radius = 63.0
+height = 182.0
 
-[sub_resource type="Gradient" id="Gradient_sugp2"]
-offsets = PackedFloat32Array(0.16368599)
-colors = PackedColorArray(0.49, 0.331975, 0.26950002, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_jyhfs"]
-gradient = SubResource("Gradient_sugp2")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tbgi4"]
+size = Vector2(107.49664, 98.69415)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5qli"]
-size = Vector2(91, 94)
-
-[sub_resource type="Gradient" id="Gradient_0wfyh"]
-offsets = PackedFloat32Array(0.5)
-colors = PackedColorArray(0.627451, 0.42352942, 0, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_sugp2"]
-gradient = SubResource("Gradient_0wfyh")
+size = Vector2(107.49664, 98.69415)
 
 [node name="Main" type="Node" unique_id=894674549]
 
-[node name="IngredientGenerator" type="Area2D" parent="." unique_id=1813639630]
-position = Vector2(571, 288)
-script = ExtResource("1_o5qli")
+[node name="TacoStandGrill" type="Sprite2D" parent="." unique_id=492969537]
+position = Vector2(563.00006, 320)
+scale = Vector2(0.872008, 0.872008)
+texture = ExtResource("1_sugp2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="IngredientGenerator" unique_id=78548441]
-shape = SubResource("RectangleShape2D_jyhfs")
+[node name="TacoStand" type="Sprite2D" parent="." unique_id=1195318427]
+visible = false
+position = Vector2(571, 324)
+scale = Vector2(0.8515624, 0.85156244)
+metadata/_edit_lock_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="IngredientGenerator" unique_id=308944988]
-position = Vector2(-9.536743e-06, 1.001358e-05)
-scale = Vector2(0.625, 144.00003)
-texture = SubResource("GradientTexture1D_tefeu")
+[node name="IngredientGenerators" type="Node2D" parent="." unique_id=57185804]
+position = Vector2(425, 239)
 
-[node name="IngredientGenerator2" type="Area2D" parent="." unique_id=1355674353]
-position = Vector2(917, 150)
-script = ExtResource("1_o5qli")
+[node name="TortillaGenerator" parent="IngredientGenerators" unique_id=1186263856 groups=["ingredient_generators"] instance=ExtResource("2_tefeu")]
+position = Vector2(141, 86)
+metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="IngredientGenerator2" unique_id=1395406051]
-shape = SubResource("RectangleShape2D_0wfyh")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IngredientGenerators/TortillaGenerator" unique_id=1040921384]
+shape = SubResource("CircleShape2D_tefeu")
 
-[node name="Sprite2D" type="Sprite2D" parent="IngredientGenerator2" unique_id=540408420]
-position = Vector2(-9.536743e-06, 1.001358e-05)
-scale = Vector2(0.625, 144.00003)
-texture = SubResource("GradientTexture1D_jyhfs")
+[node name="VegetablesGenerator" parent="IngredientGenerators" unique_id=347979950 groups=["ingredient_generators"] instance=ExtResource("2_tefeu")]
+position = Vector2(181, 335)
+ingredient = ExtResource("3_o6xl0")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IngredientGenerators/VegetablesGenerator" unique_id=1493197935]
+shape = SubResource("CircleShape2D_tbgi4")
+
+[node name="GreenSauceGenerator" parent="IngredientGenerators" unique_id=1774075843 groups=["ingredient_generators"] instance=ExtResource("2_tefeu")]
+position = Vector2(489, 14)
+ingredient = ExtResource("4_tipki")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IngredientGenerators/GreenSauceGenerator" unique_id=1284799734]
+shape = SubResource("CircleShape2D_o6xl0")
+
+[node name="CacahuatesGenerator" parent="IngredientGenerators" unique_id=1344993802 groups=["ingredient_generators"] instance=ExtResource("2_tefeu")]
+position = Vector2(-294, 101)
+ingredient = ExtResource("5_eb6dy")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IngredientGenerators/CacahuatesGenerator" unique_id=639695404]
+shape = SubResource("CircleShape2D_o6xl0")
+
+[node name="RedSauceGenerator" parent="IngredientGenerators" unique_id=417039634 groups=["ingredient_generators"] instance=ExtResource("2_tefeu")]
+position = Vector2(506, 172)
+ingredient = ExtResource("5_tipki")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IngredientGenerators/RedSauceGenerator" unique_id=1851992172]
+shape = SubResource("CircleShape2D_o6xl0")
+
+[node name="BistecGenerator" parent="IngredientGenerators" unique_id=1342392326 groups=["ingredient_generators"] instance=ExtResource("2_tefeu")]
+position = Vector2(284, 3)
+ingredient = ExtResource("4_tefeu")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IngredientGenerators/BistecGenerator" unique_id=1395406051]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_sugp2")
+
+[node name="ChorizoGenerator" parent="IngredientGenerators" unique_id=735986483 groups=["ingredient_generators"] instance=ExtResource("2_tefeu")]
+position = Vector2(280, 172)
+ingredient = ExtResource("8_trceg")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IngredientGenerators/ChorizoGenerator" unique_id=773141823]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_sugp2")
+
+[node name="ArracheraGenerator" parent="IngredientGenerators" unique_id=2141867567 groups=["ingredient_generators"] instance=ExtResource("2_tefeu")]
+position = Vector2(-8, 170)
+ingredient = ExtResource("9_a8y0u")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IngredientGenerators/ArracheraGenerator" unique_id=1376921132]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_sugp2")
+
+[node name="PastorGenerator" parent="IngredientGenerators" unique_id=438636571 groups=["ingredient_generators"] instance=ExtResource("2_tefeu")]
+ingredient = ExtResource("10_jkv2x")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IngredientGenerators/PastorGenerator" unique_id=19588349]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_sugp2")
 
 [node name="DropZones" type="Node2D" parent="." unique_id=229548507]
 
-[node name="DropZone" type="Area2D" parent="DropZones" unique_id=1138699162 groups=["dropzones"]]
-position = Vector2(391, 551)
+[node name="DropZone1" parent="DropZones" unique_id=878221727 instance=ExtResource("3_jyhfs")]
+position = Vector2(214, 592)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DropZones/DropZone" unique_id=951724261]
-shape = SubResource("RectangleShape2D_o5qli")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DropZones/DropZone1" unique_id=2068294978]
+scale = Vector2(1, 0.9999998)
+skew = 0.16406095
+shape = SubResource("RectangleShape2D_tbgi4")
 
-[node name="Sprite2D" type="Sprite2D" parent="DropZones/DropZone" unique_id=574291259]
-scale = Vector2(0.35937497, 94.50002)
-texture = SubResource("GradientTexture1D_sugp2")
-
-[node name="DropZone2" type="Area2D" parent="DropZones" unique_id=1214510769 groups=["dropzones"]]
-position = Vector2(512, 551)
+[node name="DropZone2" parent="DropZones" unique_id=221766794 instance=ExtResource("3_jyhfs")]
+position = Vector2(446, 592)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DropZones/DropZone2" unique_id=958135979]
+skew = 0.087266445
 shape = SubResource("RectangleShape2D_o5qli")
 
-[node name="Sprite2D" type="Sprite2D" parent="DropZones/DropZone2" unique_id=617418165]
-scale = Vector2(0.35937497, 94.50002)
-texture = SubResource("GradientTexture1D_sugp2")
-
-[node name="DropZone3" type="Area2D" parent="DropZones" unique_id=830658127 groups=["dropzones"]]
-position = Vector2(646, 551)
+[node name="DropZone3" parent="DropZones" unique_id=489990287 instance=ExtResource("3_jyhfs")]
+position = Vector2(771, 592)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DropZones/DropZone3" unique_id=956103538]
+skew = -0.08377588
 shape = SubResource("RectangleShape2D_o5qli")
 
-[node name="Sprite2D" type="Sprite2D" parent="DropZones/DropZone3" unique_id=438257962]
-scale = Vector2(0.35937497, 94.50002)
-texture = SubResource("GradientTexture1D_sugp2")
-
-[node name="DropZone4" type="Area2D" parent="DropZones" unique_id=1568766530 groups=["dropzones"]]
-position = Vector2(783, 551)
+[node name="DropZone4" parent="DropZones" unique_id=1067920286 instance=ExtResource("3_jyhfs")]
+position = Vector2(1006, 592)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DropZones/DropZone4" unique_id=711890496]
+scale = Vector2(1, 0.99999994)
+skew = -0.19198632
 shape = SubResource("RectangleShape2D_o5qli")
 
-[node name="Sprite2D" type="Sprite2D" parent="DropZones/DropZone4" unique_id=236264850]
-scale = Vector2(0.35937497, 94.50002)
-texture = SubResource("GradientTexture1D_sugp2")
-
-[connection signal="input_event" from="IngredientGenerator" to="IngredientGenerator" method="_on_input_event"]
-[connection signal="input_event" from="IngredientGenerator2" to="IngredientGenerator2" method="_on_input_event"]
+[node name="RedSauce" type="Sprite2D" parent="." unique_id=1344990547]
+position = Vector2(1114, 604)
+scale = Vector2(0.21157663, 0.21157664)
+texture = ExtResource("3_sugp2")
