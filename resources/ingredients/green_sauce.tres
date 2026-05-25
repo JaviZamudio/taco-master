@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://cs5jj5cepjtcm"]
+
+[ext_resource type="Script" uid="uid://37q2ck0f8687" path="res://resources/ingredient.gd" id="1_3bb04"]
+[ext_resource type="Texture2D" uid="uid://dfx7211labtw5" path="res://assets/graphics/ingredients/green_sauce.png" id="2_3bb04"]
+
+[resource]
+script = ExtResource("1_3bb04")
+name = "Green Sauce"
+texture = ExtResource("2_3bb04")
+type = 3
+metadata/_custom_type_script = "uid://37q2ck0f8687"

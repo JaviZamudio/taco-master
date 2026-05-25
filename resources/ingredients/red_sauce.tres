@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://dcslc50t6wck6"]
+
+[ext_resource type="Script" uid="uid://37q2ck0f8687" path="res://resources/ingredient.gd" id="1_p04xo"]
+[ext_resource type="Texture2D" uid="uid://e7lgkth3olnj" path="res://assets/graphics/ingredients/red_sauce.png" id="2_p04xo"]
+
+[resource]
+script = ExtResource("1_p04xo")
+name = "Red Sauce"
+texture = ExtResource("2_p04xo")
+type = 3
+metadata/_custom_type_script = "uid://37q2ck0f8687"

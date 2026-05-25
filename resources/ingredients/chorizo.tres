@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://b8ah37qboahmt"]
+
+[ext_resource type="Script" uid="uid://37q2ck0f8687" path="res://resources/ingredient.gd" id="1_qputm"]
+[ext_resource type="Texture2D" uid="uid://cmmni73056byf" path="res://assets/graphics/ingredients/corizo.png" id="2_qputm"]
+
+[resource]
+script = ExtResource("1_qputm")
+name = "Chorizo"
+texture = ExtResource("2_qputm")
+type = 1
+metadata/_custom_type_script = "uid://37q2ck0f8687"

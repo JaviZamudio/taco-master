@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://dwj40ljf6r3l"]
+
+[ext_resource type="Script" uid="uid://37q2ck0f8687" path="res://resources/ingredient.gd" id="1_5qjtw"]
+[ext_resource type="Texture2D" uid="uid://ccaj25cxcmcga" path="res://assets/graphics/ingredients/cacahuates.png" id="2_5qjtw"]
+
+[resource]
+script = ExtResource("1_5qjtw")
+name = "Cacahuates"
+texture = ExtResource("2_5qjtw")
+type = 4
+metadata/_custom_type_script = "uid://37q2ck0f8687"

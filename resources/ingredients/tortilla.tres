@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://ctidhhbwawi5d"]
+
+[ext_resource type="Script" uid="uid://37q2ck0f8687" path="res://resources/ingredient.gd" id="1_ia34t"]
+[ext_resource type="Texture2D" uid="uid://df5c7n3iek4kq" path="res://assets/graphics/ingredients/tortilla.png" id="2_2sqyd"]
+
+[resource]
+script = ExtResource("1_ia34t")
+name = "Tortilla"
+texture = ExtResource("2_2sqyd")
+type = 2
+metadata/_custom_type_script = "uid://37q2ck0f8687"

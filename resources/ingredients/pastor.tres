@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://cd21dw1yaqnem"]
+
+[ext_resource type="Script" uid="uid://37q2ck0f8687" path="res://resources/ingredient.gd" id="1_as0mf"]
+[ext_resource type="Texture2D" uid="uid://mdscxu46yp5k" path="res://assets/graphics/ingredients/pastor.png" id="2_as0mf"]
+
+[resource]
+script = ExtResource("1_as0mf")
+name = "Pastor"
+texture = ExtResource("2_as0mf")
+type = 1
+metadata/_custom_type_script = "uid://37q2ck0f8687"

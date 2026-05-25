@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://dbdjulyq02jmk"]
+
+[ext_resource type="Script" uid="uid://37q2ck0f8687" path="res://resources/ingredient.gd" id="1_hlxjw"]
+[ext_resource type="Texture2D" uid="uid://c5dglhr6rlnho" path="res://assets/graphics/ingredients/cilantro_onion.png" id="2_hlxjw"]
+
+[resource]
+script = ExtResource("1_hlxjw")
+name = "Onion and Cilantro"
+texture = ExtResource("2_hlxjw")
+metadata/_custom_type_script = "uid://37q2ck0f8687"

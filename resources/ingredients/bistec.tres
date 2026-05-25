@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://bjtja056pqcyo"]
+
+[ext_resource type="Script" uid="uid://37q2ck0f8687" path="res://resources/ingredient.gd" id="1_airnc"]
+[ext_resource type="Texture2D" uid="uid://uuqkat4kw3yb" path="res://assets/graphics/ingredients/bistec.png" id="2_0xs1f"]
+
+[resource]
+script = ExtResource("1_airnc")
+name = "Bistec"
+texture = ExtResource("2_0xs1f")
+type = 1
+metadata/_custom_type_script = "uid://37q2ck0f8687"
