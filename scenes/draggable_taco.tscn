@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cp47xovehn5qn"]
+
+[ext_resource type="Script" uid="uid://vi3ijywx14r6" path="res://scenes/draggable_taco.gd" id="1_qlg58"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qlg58"]
+radius = 31.13241
+
+[node name="Draggable" type="Area2D" unique_id=1151109687]
+script = ExtResource("1_qlg58")
+metadata/_custom_type_script = "uid://xnaav1syep74"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1774531349]
+scale = Vector2(1.6634765, 1.6634765)
+shape = SubResource("CircleShape2D_qlg58")
+
+[node name="Sprites" type="Node2D" parent="." unique_id=479472200]
+scale = Vector2(0.247, 0.247)
+
+[node name="BaseSprite" type="Sprite2D" parent="Sprites" unique_id=1394011859]
+
+[node name="MeatSprite" type="Sprite2D" parent="Sprites" unique_id=1136503726]
+
+[node name="VegetableSprite" type="Sprite2D" parent="Sprites" unique_id=544658065]
+
+[node name="SauceSprite" type="Sprite2D" parent="Sprites" unique_id=1008478347]

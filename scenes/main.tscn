@@ -38,6 +38,7 @@ size = Vector2(107.49664, 98.69415)
 position = Vector2(563.00006, 320)
 scale = Vector2(0.872008, 0.872008)
 texture = ExtResource("1_sugp2")
+metadata/_edit_lock_ = true
 
 [node name="TacoStand" type="Sprite2D" parent="." unique_id=1195318427]
 visible = false
@@ -46,17 +47,17 @@ scale = Vector2(0.8515624, 0.85156244)
 metadata/_edit_lock_ = true
 
 [node name="IngredientGenerators" type="Node2D" parent="." unique_id=57185804]
-position = Vector2(425, 239)
+metadata/_edit_lock_ = true
 
 [node name="TortillaGenerator" parent="IngredientGenerators" unique_id=1186263856 groups=["ingredient_generators"] instance=ExtResource("2_tefeu")]
-position = Vector2(141, 86)
+position = Vector2(566, 325)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IngredientGenerators/TortillaGenerator" unique_id=1040921384]
 shape = SubResource("CircleShape2D_tefeu")
 
 [node name="VegetablesGenerator" parent="IngredientGenerators" unique_id=347979950 groups=["ingredient_generators"] instance=ExtResource("2_tefeu")]
-position = Vector2(181, 335)
+position = Vector2(606, 574)
 ingredient = ExtResource("3_o6xl0")
 metadata/_edit_group_ = true
 
@@ -64,7 +65,7 @@ metadata/_edit_group_ = true
 shape = SubResource("CircleShape2D_tbgi4")
 
 [node name="GreenSauceGenerator" parent="IngredientGenerators" unique_id=1774075843 groups=["ingredient_generators"] instance=ExtResource("2_tefeu")]
-position = Vector2(489, 14)
+position = Vector2(914, 253)
 ingredient = ExtResource("4_tipki")
 metadata/_edit_group_ = true
 
@@ -72,7 +73,7 @@ metadata/_edit_group_ = true
 shape = SubResource("CircleShape2D_o6xl0")
 
 [node name="CacahuatesGenerator" parent="IngredientGenerators" unique_id=1344993802 groups=["ingredient_generators"] instance=ExtResource("2_tefeu")]
-position = Vector2(-294, 101)
+position = Vector2(131, 340)
 ingredient = ExtResource("5_eb6dy")
 metadata/_edit_group_ = true
 
@@ -80,7 +81,7 @@ metadata/_edit_group_ = true
 shape = SubResource("CircleShape2D_o6xl0")
 
 [node name="RedSauceGenerator" parent="IngredientGenerators" unique_id=417039634 groups=["ingredient_generators"] instance=ExtResource("2_tefeu")]
-position = Vector2(506, 172)
+position = Vector2(931, 411)
 ingredient = ExtResource("5_tipki")
 metadata/_edit_group_ = true
 
@@ -88,7 +89,7 @@ metadata/_edit_group_ = true
 shape = SubResource("CircleShape2D_o6xl0")
 
 [node name="BistecGenerator" parent="IngredientGenerators" unique_id=1342392326 groups=["ingredient_generators"] instance=ExtResource("2_tefeu")]
-position = Vector2(284, 3)
+position = Vector2(709, 242)
 ingredient = ExtResource("4_tefeu")
 metadata/_edit_group_ = true
 
@@ -97,7 +98,7 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_sugp2")
 
 [node name="ChorizoGenerator" parent="IngredientGenerators" unique_id=735986483 groups=["ingredient_generators"] instance=ExtResource("2_tefeu")]
-position = Vector2(280, 172)
+position = Vector2(705, 411)
 ingredient = ExtResource("8_trceg")
 metadata/_edit_group_ = true
 
@@ -106,7 +107,7 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_sugp2")
 
 [node name="ArracheraGenerator" parent="IngredientGenerators" unique_id=2141867567 groups=["ingredient_generators"] instance=ExtResource("2_tefeu")]
-position = Vector2(-8, 170)
+position = Vector2(417, 409)
 ingredient = ExtResource("9_a8y0u")
 metadata/_edit_group_ = true
 
@@ -115,6 +116,7 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_sugp2")
 
 [node name="PastorGenerator" parent="IngredientGenerators" unique_id=438636571 groups=["ingredient_generators"] instance=ExtResource("2_tefeu")]
+position = Vector2(425, 239)
 ingredient = ExtResource("10_jkv2x")
 metadata/_edit_group_ = true
 
@@ -123,6 +125,7 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_sugp2")
 
 [node name="DropZones" type="Node2D" parent="." unique_id=229548507]
+metadata/_edit_lock_ = true
 
 [node name="DropZone1" parent="DropZones" unique_id=878221727 instance=ExtResource("3_jyhfs")]
 position = Vector2(214, 592)
@@ -131,6 +134,7 @@ position = Vector2(214, 592)
 scale = Vector2(1, 0.9999998)
 skew = 0.16406095
 shape = SubResource("RectangleShape2D_tbgi4")
+debug_color = Color(0.10464262, 0.5224392, 1, 0.41960785)
 
 [node name="DropZone2" parent="DropZones" unique_id=221766794 instance=ExtResource("3_jyhfs")]
 position = Vector2(446, 592)
@@ -138,6 +142,7 @@ position = Vector2(446, 592)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DropZones/DropZone2" unique_id=958135979]
 skew = 0.087266445
 shape = SubResource("RectangleShape2D_o5qli")
+debug_color = Color(0.10464262, 0.5224392, 1, 0.41960785)
 
 [node name="DropZone3" parent="DropZones" unique_id=489990287 instance=ExtResource("3_jyhfs")]
 position = Vector2(771, 592)
@@ -145,6 +150,7 @@ position = Vector2(771, 592)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DropZones/DropZone3" unique_id=956103538]
 skew = -0.08377588
 shape = SubResource("RectangleShape2D_o5qli")
+debug_color = Color(0.10464262, 0.5224392, 1, 0.41960785)
 
 [node name="DropZone4" parent="DropZones" unique_id=1067920286 instance=ExtResource("3_jyhfs")]
 position = Vector2(1006, 592)
@@ -153,6 +159,7 @@ position = Vector2(1006, 592)
 scale = Vector2(1, 0.99999994)
 skew = -0.19198632
 shape = SubResource("RectangleShape2D_o5qli")
+debug_color = Color(0.10464262, 0.5224392, 1, 0.41960785)
 
 [node name="RedSauce" type="Sprite2D" parent="." unique_id=1344990547]
 position = Vector2(1114, 604)
