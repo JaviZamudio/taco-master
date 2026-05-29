@@ -23,7 +23,7 @@ func take_item(item: Draggable) -> bool:
 			get_tree().current_scene.add_child(self.taco)
 			self.taco.position = position
 			self.taco.original_position = position
-			self.taco.current_dropzone = self
+			self.taco.previous_dropzone = self
 			self.taco.was_dropped = true
 
 		return self.taco.take_ingredient(item.ingredient)
