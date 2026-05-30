@@ -1,6 +1,7 @@
 extends Node
 
 var orders: Array[Order] = []
+var displayed_order: Order = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -51,6 +52,11 @@ func add_order():
 	add_order_summary_card(new_order)
 
 func display_order_details(order: Order):
+	if displayed_order == order:
+		hide_order_details()
+		return
+
+	displayed_order = order
 	$Backdrop.visible = true
 
 	var taco_list: VBoxContainer = $Backdrop/OrderDetailsCard/TacoList
@@ -126,7 +132,11 @@ func choose_random_ingredient(ingredient_type: Ingredient.Type, ingredients: Dic
 
 func handle_backdrop_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		$Backdrop.visible = false
+		hide_order_details()
+
+func hide_order_details():
+	$Backdrop.visible = false
+	self.displayed_order = null
 
 func handle_order_completed(order: Order) -> void:
 	print("Order completed: " + str(order))

@@ -25,7 +25,8 @@ func take_item(item: Draggable) -> bool:
 			self.taco.original_position = position
 			self.taco.previous_dropzone = self
 			self.taco.was_dropped = true
-
-		return self.taco.take_ingredient(item.ingredient)
+			
+		if self.taco:
+			return self.taco.take_ingredient(item.ingredient)
 
 	return false

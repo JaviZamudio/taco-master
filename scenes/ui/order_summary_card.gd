@@ -13,6 +13,13 @@ func _ready() -> void:
 		printerr("OrderSummaryCard: No order assigned to the card.")
 		return
 
+	# Choose a tinct color (any basic named color)
+	var colors = ["red", "green", "blue", "yellow", "cyan", "magenta"]
+	var color_name = colors[randi() % colors.size()]
+	var color = Color(color_name)
+	color.s = color.s * 0.5 # Reduce saturation for a more pastel look
+	self.modulate = color
+
 	update_summary_label()
 	$DropZoneControl/Area2D.item_taken.connect(_on_item_taken)
 

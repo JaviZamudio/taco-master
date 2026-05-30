@@ -12,7 +12,6 @@ func take_ingredient(ingredient: Ingredient) -> bool:
 	if ingredient.type in ingredient_layers:
 		if not ingredient_layers[ingredient.type]:
 			ingredient_layers[ingredient.type] = ingredient
-			print("take ingredient: ", ingredient)
 
 			var sprite_name = (ingredient.Type.find_key(ingredient.type) as String).to_pascal_case() + "Sprite"
 			var sprite = $Sprites.get_node(sprite_name) as Sprite2D
