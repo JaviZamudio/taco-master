@@ -12,12 +12,7 @@
 [ext_resource type="Resource" uid="uid://b8ah37qboahmt" path="res://resources/ingredients/chorizo.tres" id="8_trceg"]
 [ext_resource type="Resource" uid="uid://cnr6plmnof0vn" path="res://resources/ingredients/arrachera.tres" id="9_a8y0u"]
 [ext_resource type="Resource" uid="uid://cd21dw1yaqnem" path="res://resources/ingredients/pastor.tres" id="10_jkv2x"]
-[ext_resource type="Script" uid="uid://40tc5wn46e8x" path="res://scenes/orders.gd" id="13_dp3eg"]
-[ext_resource type="Texture2D" uid="uid://df5c7n3iek4kq" path="res://assets/graphics/ingredients/tortilla.png" id="13_trceg"]
-[ext_resource type="Texture2D" uid="uid://uuqkat4kw3yb" path="res://assets/graphics/ingredients/bistec.png" id="14_jbj1t"]
-[ext_resource type="Texture2D" uid="uid://c5dglhr6rlnho" path="res://assets/graphics/ingredients/cilantro_onion.png" id="15_muem4"]
-[ext_resource type="Texture2D" uid="uid://dfx7211labtw5" path="res://assets/graphics/ingredients/green_sauce.png" id="16_dp3eg"]
-[ext_resource type="Texture2D" uid="uid://mdscxu46yp5k" path="res://assets/graphics/ingredients/pastor.png" id="17_muem4"]
+[ext_resource type="Script" uid="uid://40tc5wn46e8x" path="res://scenes/ui/orders.gd" id="13_dp3eg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tefeu"]
 radius = 74.54529
@@ -37,9 +32,6 @@ size = Vector2(107.49664, 98.69415)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5qli"]
 size = Vector2(107.49664, 98.69415)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_eb6dy"]
-size = Vector2(246, 69)
 
 [node name="Main" type="Node" unique_id=894674549]
 
@@ -179,6 +171,7 @@ texture = ExtResource("3_sugp2")
 script = ExtResource("13_dp3eg")
 
 [node name="Backdrop" type="ColorRect" parent="Orders" unique_id=2099834385]
+z_index = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -216,167 +209,21 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 16
 
-[node name="TacoDescription1" type="HBoxContainer" parent="Orders/Backdrop/OrderDetailsCard/TacoList" unique_id=52297962]
-custom_minimum_size = Vector2(0, 70)
+[node name="TacoDescription1" parent="Orders/Backdrop/OrderDetailsCard/TacoList" unique_id=1649353693 instance_placeholder="res://scenes/ui/taco_description.tscn"]
+modulate = Color(1.130224, 1.130224, 1.130224, 0.22352941)
 layout_mode = 2
-size_flags_vertical = 0
-theme_override_constants/separation = 20
 
-[node name="Label" type="Label" parent="Orders/Backdrop/OrderDetailsCard/TacoList/TacoDescription1" unique_id=961828537]
-custom_minimum_size = Vector2(24, 0)
+[node name="TacoDescription2" parent="Orders/Backdrop/OrderDetailsCard/TacoList" unique_id=1180397915 instance_placeholder="res://scenes/ui/taco_description.tscn"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "1"
-horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Orders/Backdrop/OrderDetailsCard/TacoList/TacoDescription1" unique_id=2113905834]
+[node name="TacoDescription3" parent="Orders/Backdrop/OrderDetailsCard/TacoList" unique_id=441796700 instance_placeholder="res://scenes/ui/taco_description.tscn"]
 layout_mode = 2
-texture = ExtResource("13_trceg")
-expand_mode = 2
 
-[node name="TextureRect2" type="TextureRect" parent="Orders/Backdrop/OrderDetailsCard/TacoList/TacoDescription1" unique_id=3066460]
+[node name="TacoDescription4" parent="Orders/Backdrop/OrderDetailsCard/TacoList" unique_id=712548305 instance_placeholder="res://scenes/ui/taco_description.tscn"]
 layout_mode = 2
-texture = ExtResource("14_jbj1t")
-expand_mode = 2
 
-[node name="TextureRect3" type="TextureRect" parent="Orders/Backdrop/OrderDetailsCard/TacoList/TacoDescription1" unique_id=1024766253]
+[node name="TacoDescription5" parent="Orders/Backdrop/OrderDetailsCard/TacoList" unique_id=1487140989 instance_placeholder="res://scenes/ui/taco_description.tscn"]
 layout_mode = 2
-texture = ExtResource("15_muem4")
-expand_mode = 2
-
-[node name="TextureRect4" type="TextureRect" parent="Orders/Backdrop/OrderDetailsCard/TacoList/TacoDescription1" unique_id=1407114209]
-layout_mode = 2
-texture = ExtResource("16_dp3eg")
-expand_mode = 2
-
-[node name="TacoDescription2" type="HBoxContainer" parent="Orders/Backdrop/OrderDetailsCard/TacoList" unique_id=14890574]
-custom_minimum_size = Vector2(0, 70)
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_constants/separation = 20
-
-[node name="Label" type="Label" parent="Orders/Backdrop/OrderDetailsCard/TacoList/TacoDescription2" unique_id=883220205]
-custom_minimum_size = Vector2(24, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "2"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="Orders/Backdrop/OrderDetailsCard/TacoList/TacoDescription2" unique_id=1811516244]
-layout_mode = 2
-texture = ExtResource("13_trceg")
-expand_mode = 2
-
-[node name="TextureRect2" type="TextureRect" parent="Orders/Backdrop/OrderDetailsCard/TacoList/TacoDescription2" unique_id=206813020]
-layout_mode = 2
-texture = ExtResource("14_jbj1t")
-expand_mode = 2
-
-[node name="TextureRect3" type="TextureRect" parent="Orders/Backdrop/OrderDetailsCard/TacoList/TacoDescription2" unique_id=2082714475]
-layout_mode = 2
-texture = ExtResource("15_muem4")
-expand_mode = 2
-
-[node name="TextureRect4" type="TextureRect" parent="Orders/Backdrop/OrderDetailsCard/TacoList/TacoDescription2" unique_id=643122665]
-layout_mode = 2
-texture = ExtResource("3_sugp2")
-expand_mode = 2
-
-[node name="TacoDescription3" type="HBoxContainer" parent="Orders/Backdrop/OrderDetailsCard/TacoList" unique_id=670092594]
-modulate = Color(0.84, 0.84, 0.84, 0.41960785)
-custom_minimum_size = Vector2(0, 70)
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_constants/separation = 20
-
-[node name="Label" type="Label" parent="Orders/Backdrop/OrderDetailsCard/TacoList/TacoDescription3" unique_id=1613087166]
-custom_minimum_size = Vector2(24, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "3"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="Orders/Backdrop/OrderDetailsCard/TacoList/TacoDescription3" unique_id=1676493429]
-layout_mode = 2
-texture = ExtResource("13_trceg")
-expand_mode = 2
-
-[node name="TextureRect2" type="TextureRect" parent="Orders/Backdrop/OrderDetailsCard/TacoList/TacoDescription3" unique_id=1516432470]
-layout_mode = 2
-texture = ExtResource("14_jbj1t")
-expand_mode = 2
-
-[node name="TextureRect4" type="TextureRect" parent="Orders/Backdrop/OrderDetailsCard/TacoList/TacoDescription3" unique_id=305055161]
-layout_mode = 2
-texture = ExtResource("16_dp3eg")
-expand_mode = 2
-
-[node name="TacoDescription4" type="HBoxContainer" parent="Orders/Backdrop/OrderDetailsCard/TacoList" unique_id=2110664395]
-custom_minimum_size = Vector2(0, 70)
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_constants/separation = 20
-
-[node name="Label" type="Label" parent="Orders/Backdrop/OrderDetailsCard/TacoList/TacoDescription4" unique_id=1662406746]
-custom_minimum_size = Vector2(24, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "4"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="Orders/Backdrop/OrderDetailsCard/TacoList/TacoDescription4" unique_id=1600385505]
-layout_mode = 2
-texture = ExtResource("13_trceg")
-expand_mode = 2
-
-[node name="TextureRect2" type="TextureRect" parent="Orders/Backdrop/OrderDetailsCard/TacoList/TacoDescription4" unique_id=1647066454]
-layout_mode = 2
-texture = ExtResource("14_jbj1t")
-expand_mode = 2
-
-[node name="TextureRect4" type="TextureRect" parent="Orders/Backdrop/OrderDetailsCard/TacoList/TacoDescription4" unique_id=2083256081]
-layout_mode = 2
-texture = ExtResource("3_sugp2")
-expand_mode = 2
-
-[node name="TacoDescription5" type="HBoxContainer" parent="Orders/Backdrop/OrderDetailsCard/TacoList" unique_id=1005085647]
-modulate = Color(0.8392157, 0.8392157, 0.8392157, 0.41960785)
-custom_minimum_size = Vector2(0, 70)
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_constants/separation = 20
-
-[node name="Label" type="Label" parent="Orders/Backdrop/OrderDetailsCard/TacoList/TacoDescription5" unique_id=2065269032]
-custom_minimum_size = Vector2(24, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "5"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="Orders/Backdrop/OrderDetailsCard/TacoList/TacoDescription5" unique_id=2007040632]
-layout_mode = 2
-texture = ExtResource("13_trceg")
-expand_mode = 2
-
-[node name="TextureRect2" type="TextureRect" parent="Orders/Backdrop/OrderDetailsCard/TacoList/TacoDescription5" unique_id=1276913747]
-layout_mode = 2
-texture = ExtResource("17_muem4")
-expand_mode = 2
-
-[node name="TextureRect3" type="TextureRect" parent="Orders/Backdrop/OrderDetailsCard/TacoList/TacoDescription5" unique_id=275702538]
-layout_mode = 2
-texture = ExtResource("15_muem4")
-expand_mode = 2
-
-[node name="TextureRect4" type="TextureRect" parent="Orders/Backdrop/OrderDetailsCard/TacoList/TacoDescription5" unique_id=2110452286]
-layout_mode = 2
-texture = ExtResource("16_dp3eg")
-expand_mode = 2
 
 [node name="OrderCards" type="HBoxContainer" parent="Orders" unique_id=337392474]
 anchors_preset = 5
@@ -389,160 +236,8 @@ offset_bottom = 103.0
 grow_horizontal = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
+mouse_filter = 2
 theme_override_constants/separation = 20
 
-[node name="OrderSummaryCard" type="Panel" parent="Orders/OrderCards" unique_id=191225265 groups=["dropzones", "orders"]]
-z_index = 1
-custom_minimum_size = Vector2(200, 60)
+[node name="OrderSummaryCard" parent="Orders/OrderCards" unique_id=1790433818 instance_placeholder="res://scenes/ui/order_summary_card.tscn"]
 layout_mode = 2
-
-[node name="DropZoneControl" type="Control" parent="Orders/OrderCards/OrderSummaryCard" unique_id=1108230399]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Area2D" type="Area2D" parent="Orders/OrderCards/OrderSummaryCard/DropZoneControl" unique_id=384378732 groups=["dropzones", "orders"]]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Orders/OrderCards/OrderSummaryCard/DropZoneControl/Area2D" unique_id=1451506266]
-shape = SubResource("RectangleShape2D_eb6dy")
-
-[node name="OrderSummaryLabel" type="Label" parent="Orders/OrderCards/OrderSummaryCard" unique_id=1581728670]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 32
-text = "2/5"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="OrderSummaryCard2" type="Panel" parent="Orders/OrderCards" unique_id=108030578 groups=["dropzones", "orders"]]
-z_index = 1
-custom_minimum_size = Vector2(200, 60)
-layout_mode = 2
-
-[node name="DropZoneControl" type="Control" parent="Orders/OrderCards/OrderSummaryCard2" unique_id=1022430892]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Area2D" type="Area2D" parent="Orders/OrderCards/OrderSummaryCard2/DropZoneControl" unique_id=1392146773 groups=["dropzones", "orders"]]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Orders/OrderCards/OrderSummaryCard2/DropZoneControl/Area2D" unique_id=1125213310]
-shape = SubResource("RectangleShape2D_eb6dy")
-
-[node name="OrderSummaryLabel" type="Label" parent="Orders/OrderCards/OrderSummaryCard2" unique_id=1054837390]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 32
-text = "2/5"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="OrderSummaryCard3" type="Panel" parent="Orders/OrderCards" unique_id=1284416599 groups=["dropzones", "orders"]]
-z_index = 1
-custom_minimum_size = Vector2(200, 60)
-layout_mode = 2
-
-[node name="DropZoneControl" type="Control" parent="Orders/OrderCards/OrderSummaryCard3" unique_id=211320430]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Area2D" type="Area2D" parent="Orders/OrderCards/OrderSummaryCard3/DropZoneControl" unique_id=35474664 groups=["dropzones", "orders"]]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Orders/OrderCards/OrderSummaryCard3/DropZoneControl/Area2D" unique_id=225682823]
-shape = SubResource("RectangleShape2D_eb6dy")
-
-[node name="OrderSummaryLabel" type="Label" parent="Orders/OrderCards/OrderSummaryCard3" unique_id=808968922]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 32
-text = "2/5"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="OrderSummaryCard4" type="Panel" parent="Orders/OrderCards" unique_id=377416389 groups=["dropzones", "orders"]]
-z_index = 1
-custom_minimum_size = Vector2(200, 60)
-layout_mode = 2
-
-[node name="DropZoneControl" type="Control" parent="Orders/OrderCards/OrderSummaryCard4" unique_id=1178079147]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Area2D" type="Area2D" parent="Orders/OrderCards/OrderSummaryCard4/DropZoneControl" unique_id=727281545 groups=["dropzones", "orders"]]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Orders/OrderCards/OrderSummaryCard4/DropZoneControl/Area2D" unique_id=962624825]
-shape = SubResource("RectangleShape2D_eb6dy")
-
-[node name="OrderSummaryLabel" type="Label" parent="Orders/OrderCards/OrderSummaryCard4" unique_id=1648073393]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 32
-text = "2/5"
-horizontal_alignment = 1
-vertical_alignment = 1
