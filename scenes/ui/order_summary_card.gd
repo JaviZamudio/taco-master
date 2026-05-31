@@ -19,6 +19,11 @@ func _ready() -> void:
 	var color = Color(color_name)
 	color.s = color.s * 0.5 # Reduce saturation for a more pastel look
 	self.modulate = color
+	
+	# Start with -100px in y and animate to 0 with a tween
+	$Panel.position.y = -200
+	var tween = create_tween()
+	tween.tween_property($Panel, "position:y", 0, 0.5).set_ease(Tween.EASE_OUT)
 
 	update_summary_label()
 	$DropZoneControl/Area2D.item_taken.connect(_on_item_taken)
@@ -26,7 +31,7 @@ func _ready() -> void:
 func update_summary_label():
 	var delivered_items = order.items.filter(func(item): return item.delivered)
 	var total_items = order.items.size()
-	$OrderSummaryLabel.text = "%d / %d" % [delivered_items.size(), total_items]
+	$Panel/OrderSummaryLabel.text = "%d / %d" % [delivered_items.size(), total_items]
 
 func _on_item_taken(item: Draggable) -> void:
 
@@ -71,6 +76,13 @@ func _on_gui_input(event: InputEvent) -> void:
 		display_order_details.emit(order)
 
 func handle_order_completed():
-	is_completed = true
-	order_completed.emit(order)
-	self.queue_free() # Remove the card from the scene when the order is completed
+	var callback = func ():
+		is_completed = true
+		order_completed.emit(order)
+		self.queue_free() # Remove the card from the scene when the order is completed
+
+	# Animate the card moving up and fading out
+	var tween = create_tween()
+	tween.parallel().tween_property($Panel, "position:y", -200, 0.5).set_ease(Tween.EASE_IN)
+	tween.parallel().tween_property($Panel, "modulate:a", 0, 0.5).set_ease(Tween.EASE_IN)
+	tween.tween_callback(callback)
