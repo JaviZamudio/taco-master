@@ -171,6 +171,7 @@ texture = ExtResource("3_sugp2")
 script = ExtResource("13_dp3eg")
 
 [node name="Backdrop" type="ColorRect" parent="Orders" unique_id=2099834385]
+visible = false
 z_index = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -240,4 +241,13 @@ mouse_filter = 2
 theme_override_constants/separation = 20
 
 [node name="OrderSummaryCard" parent="Orders/OrderCards" unique_id=1790433818 instance_placeholder="res://scenes/ui/order_summary_card.tscn"]
+layout_mode = 2
+
+[node name="OrderSummaryCard2" parent="Orders/OrderCards" unique_id=1898814886 instance_placeholder="res://scenes/ui/order_summary_card.tscn"]
+layout_mode = 2
+
+[node name="OrderSummaryCard3" parent="Orders/OrderCards" unique_id=1509210670 instance_placeholder="res://scenes/ui/order_summary_card.tscn"]
+layout_mode = 2
+
+[node name="OrderSummaryCard4" parent="Orders/OrderCards" unique_id=1711603925 instance_placeholder="res://scenes/ui/order_summary_card.tscn"]
 layout_mode = 2

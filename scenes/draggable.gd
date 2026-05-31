@@ -3,6 +3,7 @@ extends Area2D
 
 var was_dropped: bool = true
 var dropzone: Area2D
+var possible_dropzones: Array[Area2D] = []
 var original_position: Vector2
 
 # Called when the node enters the scene tree for the first time.
@@ -19,12 +20,24 @@ func _process(_delta: float) -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("dropzones"):
-		dropzone = area
-
+		if not possible_dropzones.has(area):
+			possible_dropzones.append(area)
 
 func _on_area_exited(area: Area2D) -> void:
-	if area.is_in_group("dropzones"):
-		dropzone = null
+	if area.is_in_group("dropzones") and dropzone == area:
+		possible_dropzones.erase(area)
+
+func get_closest_dropzone() -> Area2D:
+	var closest: Area2D = null
+	var closest_distance = INF
+
+	for dz in possible_dropzones:
+		var distance = self.global_position.distance_to(dz.global_position)
+		if distance < closest_distance:
+			closest_distance = distance
+			closest = dz
+
+	return closest
 
 func handle_drop():
 	printerr("handle_drop not implemented")
@@ -45,4 +58,6 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 		if mouse_event.pressed:
 			self.handle_pickup()
 		else:
+			self.dropzone = get_closest_dropzone()
+			was_dropped = true
 			self.handle_drop()
