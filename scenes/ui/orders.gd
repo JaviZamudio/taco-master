@@ -77,6 +77,8 @@ func display_order_details(order: Order):
 		var texture_rects = taco_description_instance.find_children("TextureRect*")
 		var index = 0
 		for ingredient: Ingredient in item.ingredients.values():
+			# # Add first char of the ingredient
+			# taco_description_instance.get_node("Label").text += ingredient.name[0] if ingredient else "-"
 			if ingredient and index < texture_rects.size():
 				var texture_rect = texture_rects[index] as TextureRect
 				texture_rect.texture = ingredient.texture
@@ -111,8 +113,10 @@ func get_ingredients():
 		dir.list_dir_begin()
 		var file_name: String = dir.get_next()
 		while file_name != "":
-			if file_name.ends_with(".tres"):
-				var ingredient = load("res://resources/ingredients/" + file_name) as Ingredient
+			if file_name.contains(".tres"):
+				# clean the file name from .remap (leaving only the .tres extension)
+				var clean_file_name = file_name.replace(".remap", "")
+				var ingredient = load("res://resources/ingredients/" + clean_file_name) as Ingredient
 				if not ingredients.has(ingredient.type):
 					ingredients[ingredient.type] = []
 				ingredients[ingredient.type].append(ingredient)
