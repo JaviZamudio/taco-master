@@ -15,10 +15,11 @@ run/main_scene="uid://bfo7sasxo8dxe"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/image="uid://broghvclvqaao"
 config/icon="uid://ivl5ha42bva4"
-boot_splash/minimum_display_time=1000
+boot_splash/minimum_display_time=2000
 
 [display]
 
+window/size/borderless=true
 window/stretch/mode="canvas_items"
 
 [physics]

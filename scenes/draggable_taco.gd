@@ -28,7 +28,7 @@ func take_ingredient(ingredient: Ingredient) -> bool:
 
 func handle_drop():
 	was_dropped = true
-	if self.dropzone and self.dropzone.take_item(self):
+	if self.dropzone and self.dropzone.has_method("take_item") and self.dropzone.take_item(self ):
 		# if we had a previous dropzone, clear its taco reference
 		if previous_dropzone:
 			self.previous_dropzone.taco = null
@@ -40,4 +40,4 @@ func handle_drop():
 		self.previous_dropzone = self.dropzone
 	else:
 		var go_back_tween = create_tween()
-		go_back_tween.tween_property(self, "global_position", original_position, 0.09)
+		go_back_tween.tween_property(self , "global_position", original_position, 0.09)
