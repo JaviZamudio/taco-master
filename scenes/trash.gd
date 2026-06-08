@@ -1,7 +1,7 @@
 extends Area2D
 
-const TRASH_CLOSED_TEXTURE: Texture2D = preload("res://assets/graphics/trash_closed-no_bg.png")
-const TRASH_OPEN_TEXTURE: Texture2D = preload("res://assets/graphics/trash_open-no_bg.png")
+const TRASH_CLOSED_TEXTURE: Texture2D = preload("uid://mtsa200le0da")
+const TRASH_OPEN_TEXTURE: Texture2D = preload("uid://utv8neawqqq1")
 
 @onready var sprite: Sprite2D = $Sprite2D
 var hovered_draggables := 0

@@ -1,6 +1,6 @@
 extends Area2D
 
-var taco_scene: PackedScene = preload("res://scenes/draggable_taco.tscn")
+var taco_scene: PackedScene = preload("uid://cp47xovehn5qn")
 var taco: Draggable
 
 # Called when the node enters the scene tree for the first time.

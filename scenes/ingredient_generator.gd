@@ -14,7 +14,7 @@ func _process(_delta: float) -> void:
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		var draggable_ingredient_scene: PackedScene = preload("res://scenes/draggable_ingredient.tscn")
+		var draggable_ingredient_scene: PackedScene = preload("uid://baltimoxlb2ix")
 		
 		var draggable_ingredient = draggable_ingredient_scene.instantiate() as Draggable
 		draggable_ingredient.ingredient = self.ingredient

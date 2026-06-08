@@ -67,7 +67,7 @@ func display_order_details(order: Order):
 	var item_index = 0
 	for item in order.items:
 		item_index += 1
-		var taco_description_scene = preload("res://scenes/ui/taco_description.tscn")
+		var taco_description_scene = preload("uid://bstdugy3ulxd6")
 		var taco_description_instance: HBoxContainer = taco_description_scene.instantiate()
 		if item.delivered:
 			# Make them look more white (more light/intensity or whatever) and less opacity/alpha
@@ -93,7 +93,7 @@ func display_order_details(order: Order):
 		taco_list.add_child(taco_description_instance)
 
 func add_order_summary_card(order: Order):
-	var card_scene = preload("res://scenes/ui/order_summary_card.tscn")
+	var card_scene = preload("uid://dr5rwabe33qal")
 	var card_instance: OrderSummaryCard = card_scene.instantiate()
 	card_instance.order = order
 	card_instance.display_order_details.connect(display_order_details)
