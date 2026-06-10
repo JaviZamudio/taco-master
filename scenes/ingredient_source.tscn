@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ceyif5gvdax6k"]
+
+[ext_resource type="Script" uid="uid://co7kiaa66f5kp" path="res://scenes/ingredient_source.gd" id="1_ln85b"]
+[ext_resource type="Resource" uid="uid://ctidhhbwawi5d" path="res://resources/ingredients/tortilla.tres" id="2_nmufe"]
+
+[node name="IngredientGenerator" type="Area2D" unique_id=1186263856]
+script = ExtResource("1_ln85b")
+ingredient = ExtResource("2_nmufe")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

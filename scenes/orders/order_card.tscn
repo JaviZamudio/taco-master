@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://dr5rwabe33qal"]
+
+[ext_resource type="Script" uid="uid://r2hwi65sb42a" path="res://scenes/orders/order_card.gd" id="1_gjipv"]
+[ext_resource type="Script" uid="uid://dgo0mpoqcrlcn" path="res://scenes/orders/order_drop_zone.gd" id="2_84ydj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eb6dy"]
+size = Vector2(212, 84)
+
+[node name="OrderCard" type="Control" unique_id=1611210855]
+z_index = 1
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 200.0
+offset_bottom = 60.0
+script = ExtResource("1_gjipv")
+
+[node name="DropZoneControl" type="Control" parent="." unique_id=981234550]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Area2D" type="Area2D" parent="DropZoneControl" unique_id=855792039 groups=["dropzones", "orders"]]
+script = ExtResource("2_84ydj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DropZoneControl/Area2D" unique_id=1488247274]
+shape = SubResource("RectangleShape2D_eb6dy")
+debug_color = Color(0.5058028, 0.4260014, 1, 0.41960785)
+
+[node name="Panel" type="Panel" parent="." unique_id=1951102956]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OrderSummaryLabel" type="Label" parent="Panel" unique_id=1546343345]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.5
+offset_top = -28.5
+offset_right = 24.5
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "2/5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PatienceBar" type="ProgressBar" parent="Panel" unique_id=1743187702]
+modulate = Color(0.1333332, 1, 0, 1)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+value = 88.0
+show_percentage = false
+
+[node name="PatienceTimer" type="Timer" parent="." unique_id=1306658033]
+
+[connection signal="gui_input" from="Panel" to="." method="_on_gui_input"]
