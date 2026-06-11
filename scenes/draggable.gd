@@ -24,7 +24,7 @@ func _on_area_entered(area: Area2D) -> void:
 			possible_dropzones.append(area)
 
 func _on_area_exited(area: Area2D) -> void:
-	if area.is_in_group("dropzones") and dropzone == area:
+	if area.is_in_group("dropzones") and possible_dropzones.has(area):
 		possible_dropzones.erase(area)
 
 func get_closest_dropzone() -> Area2D:
