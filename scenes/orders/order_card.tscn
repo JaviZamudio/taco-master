@@ -15,8 +15,15 @@ offset_right = 200.0
 offset_bottom = 60.0
 script = ExtResource("1_gjipv")
 
-[node name="DropZoneControl" type="Control" parent="." unique_id=981234550]
-visible = false
+[node name="Panel" type="Panel" parent="." unique_id=1951102956]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DropZoneControl" type="Control" parent="Panel" unique_id=981234550]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -26,20 +33,12 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Area2D" type="Area2D" parent="DropZoneControl" unique_id=855792039 groups=["dropzones", "orders"]]
+[node name="Area2D" type="Area2D" parent="Panel/DropZoneControl" unique_id=855792039 groups=["dropzones", "orders"]]
 script = ExtResource("2_84ydj")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DropZoneControl/Area2D" unique_id=1488247274]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/DropZoneControl/Area2D" unique_id=1488247274]
 shape = SubResource("RectangleShape2D_eb6dy")
 debug_color = Color(0.5058028, 0.4260014, 1, 0.41960785)
-
-[node name="Panel" type="Panel" parent="." unique_id=1951102956]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="OrderSummaryLabel" type="Label" parent="Panel" unique_id=1546343345]
 layout_mode = 1

@@ -1,4 +1,4 @@
-class_name OrderSummaryCard
+class_name OrderCard
 extends Control
 
 signal display_order_details(order)
@@ -11,7 +11,7 @@ var is_completed: bool = false
 
 func _ready() -> void:
 	if not order:
-		printerr("OrderSummaryCard: No order assigned to the card.")
+		printerr("OrderCard: No order assigned to the card.")
 		return
 
 	# Choose a tinct color (any basic named color)
@@ -28,12 +28,12 @@ func _ready() -> void:
 
 	# Set patience bar
 	$PatienceTimer.start(1.0) # Start the patience timer with 1 second intervals
-	$Panel/PatienceBar.max_value = order.patience
-	$Panel/PatienceBar.value = order.patience
+	$Panel/PatienceBar.max_value = order.patience - 1
+	$Panel/PatienceBar.value = order.patience - 1
 	$Panel/PatienceBar.modulate = get_patience_color()
 
 	update_summary_label()
-	$DropZoneControl/Area2D.item_taken.connect(_on_item_taken)
+	$Panel/DropZoneControl/Area2D.item_taken.connect(_on_item_taken)
 	$PatienceTimer.timeout.connect(_on_patience_timer_timeout)
 
 func update_summary_label():
@@ -69,8 +69,10 @@ func handle_order_completed():
 func set_patience(value: float) -> void:
 	# Clamp patience value between 0 and max
 	order.patience = clamp(value, 0, $Panel/PatienceBar.max_value)
-	$Panel/PatienceBar.value = value
-	$Panel/PatienceBar.modulate = get_patience_color()
+
+	var patience_decrease_tween: Tween = create_tween()
+	patience_decrease_tween.parallel().tween_property($Panel/PatienceBar, "value", order.patience - 1, 0.5).set_ease(Tween.EASE_OUT)
+	patience_decrease_tween.parallel().tween_property($Panel/PatienceBar, "modulate", get_patience_color(), 0.5).set_ease(Tween.EASE_OUT)
 
 	# Handle patience running out
 	if value <= 0:

@@ -249,16 +249,16 @@ mouse_filter = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="OrderSummaryCard" parent="Orders/OrderCards" unique_id=1790433818 instance_placeholder="res://scenes/orders/order_card.tscn"]
+[node name="OrderCard" parent="Orders/OrderCards" unique_id=1790433818 instance_placeholder="res://scenes/orders/order_card.tscn"]
 layout_mode = 2
 
-[node name="OrderSummaryCard2" parent="Orders/OrderCards" unique_id=1898814886 instance_placeholder="res://scenes/orders/order_card.tscn"]
+[node name="OrderCard2" parent="Orders/OrderCards" unique_id=1898814886 instance_placeholder="res://scenes/orders/order_card.tscn"]
 layout_mode = 2
 
-[node name="OrderSummaryCard3" parent="Orders/OrderCards" unique_id=1509210670 instance_placeholder="res://scenes/orders/order_card.tscn"]
+[node name="OrderCard3" parent="Orders/OrderCards" unique_id=1509210670 instance_placeholder="res://scenes/orders/order_card.tscn"]
 layout_mode = 2
 
-[node name="OrderSummaryCard4" parent="Orders/OrderCards" unique_id=1711603925 instance_placeholder="res://scenes/orders/order_card.tscn"]
+[node name="OrderCard4" parent="Orders/OrderCards" unique_id=1711603925 instance_placeholder="res://scenes/orders/order_card.tscn"]
 layout_mode = 2
 
 [node name="NewOrderTimer" type="Timer" parent="Orders" unique_id=1168926387]

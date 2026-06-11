@@ -1,7 +1,11 @@
 extends Node
 
-var MAX_ORDERS = 4
-var NEW_ORDER_INTERVAL = 5.0
+var MAX_ORDERS = 3 # TOTAL MAX = 4
+var MAX_ORDER_ITEMS = 3 # TOTAL MAX = 5
+var NEW_ORDER_INTERVAL = 10.0
+var PATIENCE_MULTIPLIER = 2.0
+var PRICE_MULTIPLIER = 1.0
+var COMPLEXITY_MULTIPLIER = 0.7
 
 var orders: Array[Order] = []
 var displayed_order: Order = null
@@ -36,7 +40,7 @@ func add_order():
 	var ingredients = get_ingredients()
 
 	# Add a random number of items to the order (between 1 and 5)
-	var items_count = randi() % 5 + 1
+	var items_count = randi() % MAX_ORDER_ITEMS + 1
 	var items: Array[OrderItem] = []
 	for i in range(items_count):
 		var order_item: OrderItem = OrderItem.new()
@@ -50,17 +54,21 @@ func add_order():
 		var complexity = 2 # base and meat are always present, so start complexity at 2
 
 		# 50% chance to have any vegetable
-		if randf() < 0.5:
+		if randf() < (0.5 * COMPLEXITY_MULTIPLIER):
 			order_item.ingredients[Ingredient.Type.VEGETABLE] = choose_random_ingredient(Ingredient.Type.VEGETABLE, ingredients)
 			complexity += 1
 		# 70% chance to have any sauce
-		if randf() < 0.7:
+		if randf() < (0.7 * COMPLEXITY_MULTIPLIER):
 			order_item.ingredients[Ingredient.Type.SAUCE] = choose_random_ingredient(Ingredient.Type.SAUCE, ingredients)
 			complexity += 1
 		
 		# item bonus + complexity * coefficient
 		new_order.payment += 2 + complexity * 2 # each ingredient adds 2 to the payment
 		new_order.patience += 3.0 + complexity * 0.5 # each ingredient adds 0.5 seconds to the patience
+
+		# Apply multipliers
+		new_order.payment *= PRICE_MULTIPLIER
+		new_order.patience *= PATIENCE_MULTIPLIER
 
 		items.append(order_item)
 
@@ -112,7 +120,7 @@ func display_order_details(order: Order):
 func add_order_card(order: Order):
 	var card_scene = preload("uid://dr5rwabe33qal")
 
-	var card_instance: OrderSummaryCard = card_scene.instantiate()
+	var card_instance: OrderCard = card_scene.instantiate()
 	card_instance.order = order
 	card_instance.display_order_details.connect(display_order_details)
 	card_instance.order_completed.connect(handle_order_completed)
@@ -190,7 +198,7 @@ func handle_order_completed(order: Order) -> void:
 	var order_cards = $OrderCards.get_children()
 	for i in range(order_cards.size()):
 		var child = order_cards[i]
-		if child is OrderSummaryCard and child.order == order:
+		if child is OrderCard and child.order == order:
 			child.queue_free()
 			add_card_placeholder(i)
 			break
