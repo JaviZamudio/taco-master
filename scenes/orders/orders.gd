@@ -33,8 +33,8 @@ func add_order():
 		return
 
 	var new_order: Order = Order.new()
-	new_order.patience = 0
-	new_order.payment = 0
+	new_order.patience = 2 * PATIENCE_MULTIPLIER
+	new_order.payment = 3 * PRICE_MULTIPLIER
 	new_order.items = []
 
 	var ingredients = get_ingredients()
@@ -63,12 +63,8 @@ func add_order():
 			complexity += 1
 		
 		# item bonus + complexity * coefficient
-		new_order.payment += 2 + complexity * 2 # each ingredient adds 2 to the payment
-		new_order.patience += 3.0 + complexity * 0.5 # each ingredient adds 0.5 seconds to the patience
-
-		# Apply multipliers
-		new_order.payment *= PRICE_MULTIPLIER
-		new_order.patience *= PATIENCE_MULTIPLIER
+		new_order.payment += (2 + complexity * 2) * PRICE_MULTIPLIER # each ingredient adds 2 to the payment
+		new_order.patience += (3.0 + complexity * 0.5) * PATIENCE_MULTIPLIER # each ingredient adds 0.5 seconds to the patience
 
 		items.append(order_item)
 
@@ -176,7 +172,7 @@ func choose_random_ingredient(ingredient_type: Ingredient.Type, ingredients: Dic
 	else:
 		return null
 
-func add_card_placeholder(idx: int=0):
+func add_card_placeholder(idx: int = 0):
 	var placeholder_node: Control = Control.new()
 	placeholder_node.name = "Placeholder_%d" % idx
 	placeholder_node.custom_minimum_size = Vector2(200, 0)

@@ -1,4 +1,6 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
-_source/Exports
+[eE]xports/
+# dist/
+dist/

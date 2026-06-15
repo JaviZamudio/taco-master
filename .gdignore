@@ -1,1 +1,4 @@
 _source/
+exports/
+dist/
+docs/
